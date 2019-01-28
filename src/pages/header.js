@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import '../css/common.css';
 import {Row,Col,Menu,Input,Icon,Dropdown,Badge,Modal} from 'antd';
+import {Link } from "react-router-dom";
 
 class Header extends Component {
     constructor(props){
@@ -9,7 +10,6 @@ class Header extends Component {
             visible:false
         };
     }
-
     handlePersonMenu(key){
         let keyValue = key.key;
         switch (keyValue) {
@@ -69,7 +69,9 @@ class Header extends Component {
         return(
             <div>
                 <Row>
-                    <Col span={10} style={{textAlign:'center',color:'white',fontWeight:'600',fontSize:'22px'}}>React+AntDesign+Router demo</Col>
+                    <Col span={10} style={{textAlign:'center',color:'white',fontWeight:'600',fontSize:'22px'}}>
+                        <Link to='/' style={{color:'white',textdecoration:'none'}}>React+AntDesign+Router demo</Link>
+                    </Col>
                     <Col span={6}>
                         <Input placeholder="请输入你想要的"/>
                     </Col>

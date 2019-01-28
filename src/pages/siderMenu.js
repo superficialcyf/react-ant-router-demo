@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import '../css/common.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Menu,Icon} from 'antd';
 
 const {SubMenu} = Menu;
@@ -11,15 +12,16 @@ class SiderMenu extends Component {
 
     render(){
         return(
-            <div>
+            <div style={{height:'100%'}}>
                 <Menu
                     mode='inline'
                     defaultOpenKeys={['first','third']}
+                    style={{height:'100%'}}
                 >
                     <SubMenu key='first' title={<span type=""><Icon type="area-chart" /><span>AntDesign组件</span></span>}>
-                        <MenuItem key='table'>表格</MenuItem>
-                        <MenuItem key='labs'>标签页</MenuItem>
-                        <MenuItem key='form'>表单</MenuItem>
+                        <MenuItem key='table'><Link to="/TableDemo">表格</Link></MenuItem>
+                        <MenuItem key='labs'><Link to="/TabsDemo">标签页</Link></MenuItem>
+                        <MenuItem key='form'><Link to="/FormDemo">表单</Link></MenuItem>
                         <MenuItem key='lunbo'>轮播图</MenuItem>
                         <MenuItem key='picupload'>图片上传</MenuItem>
                     </SubMenu>
